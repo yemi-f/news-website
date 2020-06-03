@@ -110,6 +110,7 @@ button:hover, .radio:focus,
     border: 0px;
     border-radius: 16px;
     box-shadow: 5px 5px 8px #C7E7D7;
+    margin-left: 8px;
     font-size: 1.5em;
     font-weight: 300;
 }

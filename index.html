@@ -2,61 +2,315 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet">
-    <title>Tip Calculator</title>
+    <title>Title of the document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/786b741034.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <div class="content">
-        <div class="flex-container">
-            <div class="background" id="tip-calc">
-                <form>
-                    <label for="subtotal" class="label-text" >Enter bill total</label><br><span>$</span>
-                    <input type="number" min="0" value="70.00" onkeypress="calcualateTipAmount()" id="subtotal" class="num" onClick="this.select();"><br>
-                    <label for="percent" class="label-text">Choose tip percentage</label><br>
+    <div class="row" id="outer-div">
+        <div class="col-3" id="outer-column-1">
+            <div class="rounded-circle offset-1 mt-3 mb-3"
+                style="background-image: url(images/beautiful-1844729_1920.jpg); background-size: cover; height:56px; width: 56px;">
+            </div>
+            <div class=" offset-1 ">
+                <h5 class="card-title mb-1">Feb 02, 2020</h5>
+                <p class="card-text"><span class="text-muted">08:43 am</span></p>
+            </div>
+            <div id="vertical-nav">
+                <nav class="navbar navbar-light">
 
-                    <div class="btn-group">
-                        <button type="button" onkeypress="calcualateTipAmount()" class="radio" id="btn-0">0%</button>
-                        <button type="button" onkeypress="calcualateTipAmount()" class="radio" id="btn-5">5%</button>
-                        <button type="button" onkeypress="calcualateTipAmount()" class="radio" id="btn-10">10%</button>
-                        <button type="button" onkeypress="calcualateTipAmount()" class="radio" id="btn-15">15%</button>
-                        <input type="number" onkeypress="calcualateTipAmount()" value="0" min="0" max="100" id="percent" step="5" class="num" onClick="this.select();"><span>%</span><br>
-                    </div>
+                    <ul class="navbar-nav offset-1" style="font-size: 18px;">
+                        <li class="nav-item active mt-4 mb-4">
+                            <a class="nav-link" href="#"><i class="fas fa-home mr-3 p-2" id="nav-icon"></i>Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item mb-4">
+                            <a class="nav-link" href="#"><i class="fas fa-circle mr-3 p-2" id="nav-icon"></i>International</a>
+                        </li>
+                        <li class="nav-item mb-4">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-building mr-3 p-2" id="nav-icon"></i>Business</a>
+                        </li>
+                        <li class="nav-item mb-4">
+                            <a class="nav-link" href="#"><i class="fas fa-play mr-3 p-2" id="nav-icon"></i>Entertainment</a>
+                        </li>
+                        <li class="nav-item mb-4">
+                            <a class="nav-link" href="#"><i class="fas fa-basketball-ball mr-3 p-2" id="nav-icon"></i>Sports</a>
+                        </li>
+                        <li class="nav-item mb-4">
+                            <a class="nav-link" href="#"><i class="fas fa-heartbeat mr-3 p-2" id="nav-icon"></i>Health</a>
+                        </li>
+                    </ul>
 
-                    <label for="split" class="label-text">Split</label><br>
-                    <input type="number" onkeypress="calcualateTipAmount()" min="1" value="1" step="1" id="split" class="num" onClick="this.select();"><br>
-                </form>
-                <button type="button" id="tip-calc-btn">Calculate</button>
+                </nav>
             </div>
 
-            <div class="foreground">
-                <h2>Total per person</h2>
-                <h1 id="total-per-person-value">$0.00</h1>
-                <div class="flex-container" id="bill-and-tip">
-                    <div id="bill">
-                        <h2 id="h3-text">bill</h2>
-                        <h3 id="bill-value">$0.00</h2>
+            <div class="col-10  text-white offset-1 p-3 rounded-lg" style="background-color: #4B6FFF;">
+                <div class="row">
+                    <div class="col-8">
+                        <p class="card-text mb-0">News in a box</p>
+                        <p class="card-text text-light"><small>Box is all you need</small></p>
+                        <button type="button" class="btn btn-sm pr-4 pl-4" id="upgrade-btn">Upgrade</button>
+                    </div>
+                    <div class="col-4 pl-0">
+                        <svg class="bi bi-box" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9" id="outer-column-2">
+            <div class="row p-3" id="row-1">
+                <div class="col-7">
+                    <h3>
+                        <h1><i class="far fa-sun"></i> Good morning, <span class="text-muted">Rose</span>
+                    </h3>
+                </div>
+                <div class="col-4 offset-1 p-0 mt-3">
+                    <div class="input-group">
+                        <input type="email" class="form-control border-0" placeholder="Search for articles"
+                            aria-label="Search">
+                        <div class="input-group-append">
+                            <span class="input-group-text border-0" id="append-btn"><svg class="bi bi-search"
+                                    width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                    <path fill-rule="evenodd"
+                                        d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                </svg></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4 pr-0" id="row-2">
+                <div class="col-8">
+                    <div class="card border-white h-100 rounded-lg" id="horizontal-card">
+                        <div class="row no-gutters">
+                            <div class="col-md-6 border-0 rounded-lg"
+                                style="background-image: url(images/skyline-1925943_1920.jpg); background-size: cover;">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <p class="card-text text-muted">Architecture</p>
+                                    <h4 class="card-title">Ground breakingbuilding is a classic example of English
+                                        architecture</h4>
+                                    <div class="row pl-3 mt-4">
+                                        <div class="col-2 mt-1 rounded-circle"
+                                            style="background-image: url(images/girl-919048_1920.jpg); background-size: cover; height:48px; width: 48px;">
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="card-text">Tanya Roseville<br><small class="text-muted">July 13,
+                                                    2019</small></p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="tip">
-                        <h2 id="h3-text">tip</h3>
-                            <h3 id="tip-value">$0.00</h3>
-                    </div>
                 </div>
 
 
+                <div class="col-4 pl-3  rounded-lg mb-0 pb-0">
+                    <div class="col-12 bg-white rounded-lg h-100">
+                        <div class="card pl-3 mb-3 border-0" id="capsule-div">
+                            <div class="row no-gutters">
+                                <div class="col-md-2 mt-3">
+                                    <img src="images/newspaper.svg" class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body">
+                                        <h6 class="card-text mb-0 rounded-lg">Tuesday Capsule</h6>
+                                        <p class="card-text mb-1"><small class="text-muted">Get updated on the
+                                                fly</small>
+                                        </p>
+                                        <a href="#" class="text-decoration-none">
+                                            <p class="card-text" style="color: #5A7AFF;"><small
+                                                    class="font-weight-bold">Brief me</small><svg
+                                                    class="bi bi-arrow-right-short" width="1em" height="1em"
+                                                    viewBox="0 0 16 16" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.793 8 8.146 5.354a.5.5 0 0 1 0-.708z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M4 8a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 0 1H4.5A.5.5 0 0 1 4 8z" />
+                                                </svg></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="card-title mb-0">Amsterdam, Netherlands</h6>
+                        <div class="card mb-2 border-0">
+                            <div class="row no-gutters">
+                                <div class="col-md-2 mt-2">
+                                    <img src="images/cloud-fill.svg" class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-10 mb-0">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-0">28 <span class="text-muted">°<small>c</small></span>
+                                        </h4>
+                                        <p class="card-text"><small class="text-muted">Cloudy day, chances of
+                                                rain</small>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
+
+
+
+            <div class="card-deck mb-4">
+
+                <div class="card mb-0  border-white rounded-lg" id="horizontal-card">
+                    <div class="row no-gutters">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Subscribe to Newsletter</h5>
+                            <div class="input-group">
+                                <input type="email" class="form-control border-0" placeholder="Enter email"
+                                    aria-label="Email">
+                                <div class="input-group-append">
+                                    <span class="input-group-text border-0" id="append-btn"><svg class="bi bi-envelope"
+                                            width="1em" height="1em" viewBox="0 0 16 16" fill="white"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
+                                            <path
+                                                d="M.05 3.555C.017 3.698 0 3.847 0 4v.697l5.803 3.546L0 11.801V12c0 .306.069.596.192.856l6.57-4.027L8 9.586l1.239-.757 6.57 4.027c.122-.26.191-.55.191-.856v-.2l-5.803-3.557L16 4.697V4c0-.153-.017-.302-.05-.445L8 8.414.05 3.555z" />
+                                        </svg></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-0  border-white rounded-lg" id="horizontal-card">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 border-0 rounded-lg"
+                            style="background-image: url(images/cauliflower-1465732_1920.jpg); background-size: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body pt-3">
+                                <p class="card-text mb-1"><svg class="bi bi-eye-fill" width="1em" height="1em"
+                                        viewBox="0 0 16 16" fill="#7C8D9A" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                    </svg><small class="text-muted"> 12,090</small></p>
+
+                                <h5 class="card-title">The benefits of cauliflower</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-0  border-white rounded-lg" id="horizontal-card">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 border-0 rounded-lg"
+                            style="background-image: url(images/heart-742712_1280.jpg); background-size: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body pt-3">
+                                <p class="card-text mb-1"><svg class="bi bi-eye-fill" width="1em" height="1em"
+                                        viewBox="0 0 16 16" fill="#7C8D9A" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                    </svg><small class="text-muted"> 44,880</small></p>
+                                <h5 class="card-title">Let us plant more trees this year</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row pr-0" id="row-4">
+                <div class="col-10 mr-0 pr-3">
+
+                    <div class="card mb-3 border-white rounded-lg" id="horizontal-card">
+                        <div class="row no-gutters rounded-lg" style="background-color: #F1F5ED;">
+                            <div class="col-md-8">
+
+                                <div class="card-body">
+                                    <h4><span class="badge border-0 font-weight-normal"
+                                            style="background-color: #88B27C; color: #FFFFFF; ">Featured</span></h4>
+                                    <h3 class="card-title">Natural mood regulation low or even absent in people with
+                                        depression</h3>
+                                    <p class="card-text">Mood varies from hour-to-hour and healthy mood regulation
+                                        involves choosing activities that help settleones mood.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="images/28011844_mental-health-3285625_1280.png" class="card-img" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="bg-white mb-0 p-2 rounded-lg">
+                        <div>
+                            <h4 class="card-title mb-0">Author</h4>
+                            <p><small class="text-muted">of the month</small></p>
+                        </div>
+                        <div class="card bg-dark text-white">
+                            <img src="images/people-2442565_1920.jpg" class="card-img" alt="...">
+                            <div class="card-img-overlay ">
+                                <p class="card-text"><strong>Benjamin</strong><br>Pete Jonas</p>
+                            </div>
+                        </div>
+                        <div class="card-body p-0 mb-3 mt-1">
+                            <a href="#" class="text-decoration-none">
+                                <p class="card-text" style="color: #5A7AFF;"><small class="font-weight-bold">Know
+                                        more</small><svg class="bi bi-arrow-right-short" width="1em" height="1em"
+                                        viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M8.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.793 8 8.146 5.354a.5.5 0 0 1 0-.708z" />
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 0 1H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
     </div>
+    </div>
+    </div>
 
 
-
-    <script src="scripts/main.js"></script>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
 
 </html>

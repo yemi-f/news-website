@@ -4,16 +4,11 @@ body {
     width: 100%;
     background: linear-gradient(to bottom, white 20%, #F3F4F8 0%);
     background-attachment: fixed;
-
 }
 
 .fa-sun {
     color: #F5D7A0;
     text-shadow: 0 0 1px #3F3A35;
-}
-
-#goat {
-    border-width: 16px;
 }
 
 #outer-column-1 {
@@ -55,9 +50,12 @@ body {
     border-radius: 24px !important;
 }
 
-#nav-icon, #upgrade-btn, .form-control {
+#nav-icon,
+#upgrade-btn,
+.form-control {
     border-radius: 8px;
 }
+
 #append-btn {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -69,10 +67,6 @@ body {
 
 #outer-div {
     height: 100vh;
-}
-
-#loco {
-    border-width: 24px;
 }
 
 .form-control {
